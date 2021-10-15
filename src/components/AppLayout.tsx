@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import {
   useColorMode,
   Switch,
@@ -28,26 +28,8 @@ const ToggleDarkMode = () => {
   );
 }
 
-export interface Props {
-  title: string,
-  children: React.ReactNode,
+interface Props {
+  children: ReactNode
 }
 
-const AppLayout = ({ title = "Jester", children }: Props) => (
-  <>
-    <Flex direction="row">
-      <Heading>
-        {title}
-      </Heading>
-      <Spacer />
-      <HStack>
-        <ToggleDarkMode />
-      </HStack>
-    </Flex>
-    <Container>
-      {children}
-    </Container>
-  </>
-)
-
-export default AppLayout
+export const AppLayout = (props: Props) => <>{props.children}</>;

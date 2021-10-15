@@ -1,9 +1,18 @@
-import React from 'react';
-import AppLayout from '../components/app-layout'
+import React, { useState, useEffect } from 'react';
+import { FlatList } from 'native-base'
+import { AppLayout, JokeItem } from '../components'
+import { useAppSelector, RootState } from '../store'
 
-const FavouriteJokesScreen = () => (
-  <AppLayout>
-  </AppLayout>
-)
+export const FavouriteJokes = () => {
+  const favourites = useAppSelector((state: RootState) => state.favourites.favourites)
 
-export default FavouriteJokesScreen
+  return (
+    <AppLayout>
+      <FlatList
+        data={favourites}
+        renderItem={row => <JokeItem item={row.item} />}
+        keyExtractor={item => item.id}
+      />
+    </AppLayout>
+  )
+}

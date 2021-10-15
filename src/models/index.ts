@@ -1,0 +1,1 @@
+export { Joke } from './Joke'
