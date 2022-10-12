@@ -19,7 +19,6 @@ export type TabParamList = {
 type AppNavProps = NativeStackScreenProps<StackParamList>
 
 type RandomJokeProps = BottomTabScreenProps<TabParamList, 'RandomTab'>
-type FavouritesProps = BottomTabScreenProps<TabParamList, 'FavsTab'>
 
 export type RandomJokeScreenProps = CompositeScreenProps<
   RandomJokeProps,

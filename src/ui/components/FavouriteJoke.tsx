@@ -1,8 +1,8 @@
 import React from 'react'
 import {Box, Text, Flex, IconButton} from 'native-base'
-import type {Joke} from '../types'
+import type {Joke} from '@types'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
-import {useAppDispatch, removeFavourite} from '../store'
+import {useAppDispatch, removeFavourite} from '@store'
 
 interface Props {
   item: Joke

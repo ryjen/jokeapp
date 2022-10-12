@@ -5,10 +5,12 @@ module.exports = {
       'module-resolver',
       {
         alias: {
-          '@store': './src/store',
-          '@types': './src/types',
-          '@components': './src/components',
-          '@screens': './src/screens',
+          '@app': './src/app/',
+          '@store': './src/data/store',
+          '@types': './src/domain/types',
+          '@components': './src/ui/components',
+          '@screens': './src/ui/screens',
+          '@usecases': './src/domain/usecases',
         },
       },
     ],

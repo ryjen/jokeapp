@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import type {Joke} from '../types'
+import type {Joke} from '@types'
 
 export interface State {
   joke?: Joke

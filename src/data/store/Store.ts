@@ -1,6 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
-import logger from 'redux-logger'
 import {persistStore} from 'redux-persist'
 import {reducer as favourites} from './Favourites'
 import {reducer as joke} from './Joke'
@@ -12,7 +11,7 @@ export const store = configureStore({
     joke,
     navigation,
   },
-  middleware: [thunk, logger],
+  middleware: [thunk],
 })
 
 export const persistor = persistStore(store)

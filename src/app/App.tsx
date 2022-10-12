@@ -4,12 +4,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {Provider as ReduxProvider} from 'react-redux'
 import {NativeBaseProvider} from 'native-base'
 import {PersistGate} from 'redux-persist/integration/react'
-import {store, persistor} from './src/store'
+import {store, persistor} from '@store'
 import {
   RandomJokeNavigation as RandomJokeScreen,
   FavouriteJokesScreen,
-} from './src/screens'
-import {useAppSelector, RootState} from './src/store'
+} from '@screens'
+import {useAppSelector, RootState} from '@store'
 
 const Stack = createNativeStackNavigator()
 
@@ -25,7 +25,7 @@ const AppOptions = () => {
   }
 }
 
-const App = () => {
+export const App = () => {
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -46,5 +46,3 @@ const App = () => {
     </ReduxProvider>
   )
 }
-
-export default App

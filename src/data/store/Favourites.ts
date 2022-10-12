@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {persistReducer} from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import type {Joke} from '../types'
+import type {Joke} from '@types'
 
 export interface State {
   favourites: Array<Joke>

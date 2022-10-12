@@ -4,9 +4,9 @@ import {
   useAppSelector,
   updateFavourite,
   RootState,
-} from '../store'
+} from '@store'
 import {IconButton} from 'native-base'
-import type {Joke} from '../types'
+import type {Joke} from '@types'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
 
 interface Props {

@@ -9,19 +9,17 @@ import {
   FavouritesIcon,
 } from '@components'
 import type {
-  Joke,
   RandomJokeNavParams,
   RandomJokeScreenProps,
   RootState,
 } from '@types'
-import {useAppDispatch, updateJoke, updateNavMenu, useAppSelector} from '@store'
+import {useAppDispatch, updateNavMenu, useAppSelector} from '@store'
 import {FavouriteJokesScreen} from '@screens'
+import {useRandomJoke} from '@usecases'
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const [isRefreshing, setRefreshing] = useState(false)
-  const [isLoading, setLoading] = useState(true)
-  const [joke, setJoke] = useState<Joke | undefined>()
-  const [isError, setError] = useState(false)
+  const data = useRandomJoke(isRefreshing)
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
 
@@ -41,45 +39,20 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
     dispatch(updateNavMenu(RandomJokeMenu))
   }, [dispatch])
 
-  useEffect(() => {
-    setLoading(true)
-    setError(false)
-    fetch('https://icanhazdadjoke.com', {
-      headers: {
-        Accept: 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        return {id: data.id, joke: data.joke}
-      })
-      .then((data: Joke) => {
-        setJoke(data)
-        dispatch(updateJoke(data))
-      })
-      .catch((e: Error) => {
-        console.error(e)
-        setError(true)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [dispatch, setJoke, setLoading, setError, isRefreshing])
-
   return (
     <AppLayout>
       <Center flex={1}>
-        {isLoading ? (
+        {data.isLoading ? (
           <VStack>
             <Spinner />
           </VStack>
-        ) : isError ? (
+        ) : data.isError ? (
           <VStack>
             <Text fontSize="md">{t('Could not load random joke.')}</Text>
           </VStack>
         ) : (
           <ScrollView p="10">
-            <Text fontSize="4xl">{joke?.joke}</Text>
+            <Text fontSize="4xl">{data.joke?.joke}</Text>
           </ScrollView>
         )}
       </Center>
