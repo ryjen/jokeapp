@@ -1,4 +1,11 @@
-export * from './store'
-export * from './hooks'
-export { update as updateJoke } from './joke'
-export { add as addFavourite, remove as removeFavourite } from './favourites';
+export * from './Store'
+export * from './Hooks'
+export {update as updateJoke} from './Joke'
+export {
+  update as updateFavourite,
+  remove as removeFavourite,
+} from './Favourites'
+export {
+  updateMenu as updateNavMenu,
+  updateTitle as updateNavTitle,
+} from './Navigation'

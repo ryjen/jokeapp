@@ -1,5 +1,5 @@
 {
-  "name": "projectname",
+  "name": "jiver",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -7,18 +7,22 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "compile": "tsc -b"
   },
   "dependencies": {
     "@babel/preset-env": "^7.19.4",
     "@react-native-async-storage/async-storage": "^1.15.9",
+    "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.2.4",
     "@react-navigation/stack": "^6.0.11",
     "@reduxjs/toolkit": "^1.6.2",
     "@types/react": "^18.0.21",
+    "i18next": "^21.10.0",
     "native-base": "^3.4.17",
     "react": "^18.2.0",
+    "react-i18next": "^11.18.6",
     "react-native": "0.70.2",
     "react-native-gesture-handler": "^2.7.0",
     "react-native-safe-area-context": "^4.4.1",
@@ -38,9 +42,14 @@
     "@react-native-community/eslint-config": "^3.1.0",
     "@types/jest": "^29.1.2",
     "@types/react-native": "^0.70.4",
+    "@types/react-native-vector-icons": "^6.4.12",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/redux-logger": "^3.0.9",
     "babel-jest": "^29.1.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.25.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^29.1.2",
     "metro-react-native-babel-preset": "^0.73.1",
     "prettier": "^2.7.1",
@@ -56,6 +65,12 @@
       "jsx",
       "json",
       "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/ImageMock.tsx"
+    },
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
     ]
   }
 }

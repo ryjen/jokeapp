@@ -1,89 +1,121 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native'
+import React, {useState, useEffect, useCallback} from 'react'
+import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
+import {useTranslation} from 'react-i18next'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {
-  Center,
-  Text,
-  VStack,
-  HStack,
-  Spinner,
-  ScrollView,
-  Pressable,
-  Icon,
-} from 'native-base'
-import { default as FontAwesome } from 'react-native-vector-icons/FontAwesome'
-import { AppLayout } from '../components'
-import { useAppDispatch, updateJoke } from '../store'
+  AppLayout,
+  RandomJokeMenu,
+  RefreshIcon,
+  FavouritesIcon,
+} from '@components'
+import type {
+  Joke,
+  RandomJokeNavParams,
+  RandomJokeScreenProps,
+  RootState,
+} from '@types'
+import {useAppDispatch, updateJoke, updateNavMenu, useAppSelector} from '@store'
+import {FavouriteJokesScreen} from '@screens'
 
-const text = {
-  loading: 'Loading...',
-  refresh: 'Refresh',
-  favourites: 'Favourites',
-}
-
-export const RandomJoke = () => {
+export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
+  const [isRefreshing, setRefreshing] = useState(false)
   const [isLoading, setLoading] = useState(true)
-  const [joke, setJoke] = useState('')
-  const navigation = useNavigation()
+  const [joke, setJoke] = useState<Joke | undefined>()
+  const [isError, setError] = useState(false)
   const dispatch = useAppDispatch()
+  const {t} = useTranslation()
 
-  const getRandomJoke = async () => {
-    try {
-      setLoading(true)
-      const resp = await fetch('https://icanhazdadjoke.com', {
-        headers: {
-          Accept: 'application/json',
-        },
-      })
-      const joke = await resp.json()
-      setJoke(joke.joke)
-      dispatch(updateJoke(joke))
-    } catch (e) {
-      console.error(e)
-    } finally {
-      setLoading(false)
-    }
-  }
+  const toggleRefresh = useCallback(() => {
+    setRefreshing(value => !value)
+  }, [])
+
+  useEffect(
+    () =>
+      navigation.addListener('tabPress', () => {
+        toggleRefresh()
+      }),
+    [navigation, toggleRefresh],
+  )
 
   useEffect(() => {
-    getRandomJoke();
-  }, [])
+    dispatch(updateNavMenu(RandomJokeMenu))
+  }, [dispatch])
+
+  useEffect(() => {
+    setLoading(true)
+    setError(false)
+    fetch('https://icanhazdadjoke.com', {
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        return {id: data.id, joke: data.joke}
+      })
+      .then((data: Joke) => {
+        setJoke(data)
+        dispatch(updateJoke(data))
+      })
+      .catch((e: Error) => {
+        console.error(e)
+        setError(true)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [dispatch, setJoke, setLoading, setError, isRefreshing])
 
   return (
     <AppLayout>
-      <Center flexGrow={1}>
+      <Center flex={1}>
         {isLoading ? (
           <VStack>
             <Spinner />
-            <Text fontSize="md">{text.loading}</Text>
+          </VStack>
+        ) : isError ? (
+          <VStack>
+            <Text fontSize="md">{t('Could not load random joke.')}</Text>
           </VStack>
         ) : (
           <ScrollView p="10">
-            <Text fontSize="4xl">{joke}</Text>
+            <Text fontSize="4xl">{joke?.joke}</Text>
           </ScrollView>
         )}
       </Center>
-      <HStack justifyContent="space-evenly" shadow={6} bg="muted.200">
-        <Pressable onPress={() => getRandomJoke()}>
-         { ({isPressed}) => {
-            return (
-            <Center p="2" bg={isPressed ? "muted.300" : null}>
-              <Icon as={FontAwesome} name="refresh" size="lg" color="primary.700" />
-              <Text>{text.refresh}</Text>
-            </Center>
-          )}
-         }
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Favourites')}>
-         { ({isPressed}) => {
-           return (
-             <Center p="2" bg={isPressed ? "muted.300" : null}>
-              <Icon as={FontAwesome} name="bookmark" size="lg" color="tertiary.700" />
-              <Text>{text.favourites}</Text>
-            </Center>
-           )}
-         }
-        </Pressable>
-      </HStack>
     </AppLayout>
+  )
+}
+
+const Tab = createBottomTabNavigator<RandomJokeNavParams>()
+
+export const RandomJokeNavigation = () => {
+  const numOfFavs = useAppSelector(
+    (state: RootState) => state.favourites.favourites.length,
+  )
+  return (
+    <Tab.Navigator
+      initialRouteName="RandomTab"
+      screenOptions={{headerShown: false}}>
+      <Tab.Screen
+        name="RandomTab"
+        component={RandomJoke}
+        options={{
+          tabBarLabel: 'Refresh',
+          title: 'Jiver - Random',
+          tabBarIcon: RefreshIcon,
+        }}
+      />
+      <Tab.Screen
+        name="FavsTab"
+        component={FavouriteJokesScreen}
+        options={{
+          tabBarLabel: 'Favourites',
+          title: 'Jiver - Favourites',
+          tabBarIcon: FavouritesIcon,
+          tabBarBadge: numOfFavs,
+        }}
+      />
+    </Tab.Navigator>
   )
 }

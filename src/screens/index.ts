@@ -1,2 +1,5 @@
-export { RandomJoke as RandomJokeScreen } from './RandomJoke'
-export { FavouriteJokes as FavouriteJokesScreen } from './FavouriteJokes'
+export {
+  RandomJoke as RandomJokeScreen,
+  RandomJokeNavigation,
+} from './RandomJoke'
+export {FavouriteJokes as FavouriteJokesScreen} from './FavouriteJokes'

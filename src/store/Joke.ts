@@ -1,15 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Joke } from '../models'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import type {Joke} from '../types'
 
 export interface State {
   joke?: Joke
 }
 
-const initialState: State = {
-  joke: null,
-}
+const initialState: State = {}
 
-export const slice = createSlice({
+const slice = createSlice({
   name: 'joke',
   initialState,
   reducers: {
@@ -21,4 +19,4 @@ export const slice = createSlice({
 
 export const reducer = slice.reducer
 
-export const { update } = slice.actions
+export const {update} = slice.actions
