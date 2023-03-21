@@ -22,13 +22,8 @@ a small app to request a joke from [iCanHazDadJoke](https://icanhazdadjoke.com)
 
 - uncle bob's clean architecture, separation of data, domain and presentation
   layers with use cases
-- composable architecture: redux with reducers and effects for state
-- android architecture: viewModels control redux effects and mapping data state to UI state.
-- compose and material ui frameworks
-- kotlin state flow and coroutines: all async state and effects are tied to viewModel scope
-- navigation with routing and notifications
-- per-screen headers and footers
-- data repositories prefer network, and save to local cache
+- redux architecture
+- nested navigation
 
 ## implementation
 

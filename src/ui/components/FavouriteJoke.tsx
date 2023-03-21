@@ -11,8 +11,6 @@ interface Props {
 export const FavouriteJoke = (props: Props) => {
   const dispatch = useAppDispatch()
 
-  console.log(props.item)
-
   return (
     <Box bg="muted.200" mx="4" my="2" borderRadius="10">
       <Flex direction="row" my="4" mx="2" justifyContent="space-between">
