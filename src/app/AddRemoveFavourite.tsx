@@ -1,19 +1,13 @@
 import React, {useCallback} from 'react'
-import {
-  useAppDispatch,
-  useAppSelector,
-  updateFavourite,
-  RootState,
-} from '@store'
 import {IconButton} from 'native-base'
-import type {Joke} from '@types'
+import type {JokeProps as Props} from '@types'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
-
-interface Props {
-  joke: Joke
-}
+import {useAppTheme} from '@app'
+import {useAppDispatch, useAppSelector, updateFavourite} from '@store'
+import type {RootState} from '@store'
 
 export const AddRemoveFavourite = ({joke}: Props) => {
+  const {icons} = useAppTheme()
   const dispatch = useAppDispatch()
 
   const isFavourite = useAppSelector((state: RootState) => {
@@ -21,18 +15,18 @@ export const AddRemoveFavourite = ({joke}: Props) => {
     return joke && favs.findIndex(j => j.id === joke.id) !== -1
   })
 
-  const onUpdateFavourite = useCallback(
+  const setFavourite = useCallback(
     () => dispatch(updateFavourite(joke)),
     [dispatch, joke],
   )
 
   return (
     <IconButton
-      onPress={() => onUpdateFavourite()}
+      onPress={() => setFavourite()}
       _icon={{
         as: FontAwesome,
         name: isFavourite ? 'minus-circle' : 'plus-circle',
-        color: 'tertiary.700',
+        color: icons.actions,
       }}
       size="md"
     />

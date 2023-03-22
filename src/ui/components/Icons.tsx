@@ -1,9 +1,22 @@
 import React from 'react'
 import {Icon} from 'native-base'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
+import {useAppTheme} from '@app'
 
-export const RefreshIcon = () => <Icon name="refresh" as={FontAwesome} />
+type Props = {
+  as: typeof FontAwesome
+  name: string
+}
 
-export const FavouritesIcon = () => <Icon name="bookmark" as={FontAwesome} />
+const ActionIcon = (props: Props) => {
+  const {icons} = useAppTheme()
+  return <Icon {...props} color={icons.actions} />
+}
 
-export const UIModeIcon = () => <Icon name="yin-yang" as={FontAwesome} />
+export const RefreshIcon = () => <ActionIcon name="refresh" as={FontAwesome} />
+
+export const FavouritesIcon = () => (
+  <ActionIcon name="bookmark" as={FontAwesome} />
+)
+
+export const UIModeIcon = () => <ActionIcon name="yin-yang" as={FontAwesome} />

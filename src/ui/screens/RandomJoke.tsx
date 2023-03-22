@@ -1,15 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {AppLayout, RefreshIcon, FavouritesIcon} from '@components'
-import type {
-  RandomJokeNavParams,
-  RandomJokeScreenProps,
-  RootState,
-} from '@types'
-import {useAppSelector} from '@store'
-import {FavouriteJokesScreen} from '@screens'
+import {AppLayout} from '@components'
+import type {RandomJokeScreenProps} from '@types'
 import {useRandomJoke} from '@usecases'
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
@@ -47,38 +40,5 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
         )}
       </Center>
     </AppLayout>
-  )
-}
-
-const Tab = createBottomTabNavigator<RandomJokeNavParams>()
-
-export const RandomJokeNavigation = () => {
-  const numOfFavs = useAppSelector(
-    (state: RootState) => state.favourites.favourites.length,
-  )
-  return (
-    <Tab.Navigator
-      initialRouteName="RandomTab"
-      screenOptions={{headerShown: false}}>
-      <Tab.Screen
-        name="RandomTab"
-        component={RandomJoke}
-        options={{
-          tabBarLabel: 'Refresh',
-          title: 'Jiver - Random',
-          tabBarIcon: RefreshIcon,
-        }}
-      />
-      <Tab.Screen
-        name="FavsTab"
-        component={FavouriteJokesScreen}
-        options={{
-          tabBarLabel: 'Favourites',
-          title: 'Jiver - Favourites',
-          tabBarIcon: FavouritesIcon,
-          tabBarBadge: numOfFavs,
-        }}
-      />
-    </Tab.Navigator>
   )
 }

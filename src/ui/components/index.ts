@@ -1,5 +1,3 @@
 export * from './AppLayout'
 export * from './FavouriteJoke'
-export * from './RandomJokeMenu'
-export * from './ToggleDarkMode'
 export * from './Icons'
