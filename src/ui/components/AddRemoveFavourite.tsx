@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import {
   useAppDispatch,
   useAppSelector,
@@ -21,9 +21,14 @@ export const AddRemoveFavourite = ({joke}: Props) => {
     return joke && favs.findIndex(j => j.id === joke.id) !== -1
   })
 
+  const onUpdateFavourite = useCallback(
+    () => dispatch(updateFavourite(joke)),
+    [dispatch, joke],
+  )
+
   return (
     <IconButton
-      onPress={() => dispatch(updateFavourite(joke))}
+      onPress={() => onUpdateFavourite()}
       _icon={{
         as: FontAwesome,
         name: isFavourite ? 'minus-circle' : 'plus-circle',

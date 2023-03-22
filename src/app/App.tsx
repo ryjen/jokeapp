@@ -25,7 +25,7 @@ const AppOptions = () => {
   }
 }
 
-export const App = () => {
+export const App = (): JSX.Element => {
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>

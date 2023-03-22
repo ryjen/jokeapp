@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import {Box, Text, Flex, IconButton} from 'native-base'
 import type {Joke} from '@types'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
@@ -10,6 +10,10 @@ interface Props {
 
 export const FavouriteJoke = (props: Props) => {
   const dispatch = useAppDispatch()
+  const onRemoveFavourite = useCallback(
+    () => dispatch(removeFavourite(props.item.id)),
+    [dispatch, props.item.id],
+  )
 
   return (
     <Box bg="muted.200" mx="4" my="2" borderRadius="10">
@@ -18,7 +22,7 @@ export const FavouriteJoke = (props: Props) => {
           {props.item.joke}
         </Text>
         <IconButton
-          onPress={() => dispatch(removeFavourite(props.item.id))}
+          onPress={() => onRemoveFavourite()}
           _icon={{as: FontAwesome, name: 'minus-circle', color: 'danger.400'}}
           size="md"
         />
