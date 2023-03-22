@@ -3,13 +3,11 @@ import thunk from 'redux-thunk'
 import {persistStore} from 'redux-persist'
 import {reducer as favourites} from './Favourites'
 import {reducer as joke} from './Joke'
-import {reducer as navigation} from './Navigation'
 
 export const store = configureStore({
   reducer: {
     favourites,
     joke,
-    navigation,
   },
   middleware: [thunk],
 })

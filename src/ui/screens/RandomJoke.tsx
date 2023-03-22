@@ -2,18 +2,13 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {
-  AppLayout,
-  RefreshIcon,
-  FavouritesIcon,
-  updateRandomJokeMenu,
-} from '@components'
+import {AppLayout, RefreshIcon, FavouritesIcon} from '@components'
 import type {
   RandomJokeNavParams,
   RandomJokeScreenProps,
   RootState,
 } from '@types'
-import {useAppSelector, useAppDispatch} from '@store'
+import {useAppSelector} from '@store'
 import {FavouriteJokesScreen} from '@screens'
 import {useRandomJoke} from '@usecases'
 
@@ -21,11 +16,6 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
   const [isRefreshing, setRefreshing] = useState(false)
   const data = useRandomJoke(isRefreshing)
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(updateRandomJokeMenu())
-  }, [dispatch])
 
   const toggleRefresh = useCallback(() => {
     setRefreshing(value => !value)

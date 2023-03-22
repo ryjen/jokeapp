@@ -9,23 +9,23 @@ import {
   RandomJokeNavigation as RandomJokeScreen,
   FavouriteJokesScreen,
 } from '@screens'
-import {useAppSelector, RootState} from '@store'
+import {RandomJokeMenu} from '@components'
+import {useTranslation} from 'react-i18next'
 
 const Stack = createNativeStackNavigator()
 
 const AppOptions = () => {
-  const state = useAppSelector((root: RootState) => root.navigation)
-
+  const {t} = useTranslation()
   return {
     headerTitleStyle: {
       fontSize: 24,
     },
-    headerRight: state.menu,
-    title: state.title ?? 'Jiver',
+    title: t('Jiver'),
   }
 }
 
 export const App = (): JSX.Element => {
+  const {t} = useTranslation()
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -34,10 +34,20 @@ export const App = (): JSX.Element => {
             <Stack.Navigator
               initialRouteName="Random"
               screenOptions={AppOptions}>
-              <Stack.Screen name="Random" component={RandomJokeScreen} />
+              <Stack.Screen
+                name="Random"
+                component={RandomJokeScreen}
+                options={{
+                  headerRight: RandomJokeMenu,
+                  title: t('Jiver - Random Joke'),
+                }}
+              />
               <Stack.Screen
                 name="Favourites"
                 component={FavouriteJokesScreen}
+                options={{
+                  title: t('Jiver - Favourites'),
+                }}
               />
             </Stack.Navigator>
           </NavigationContainer>
