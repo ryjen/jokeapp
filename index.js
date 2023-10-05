@@ -1,10 +1,6 @@
-/**
- * @format
- */
-
 import {AppRegistry} from 'react-native'
-import {App} from '@app'
+import {App} from '@presentation/App'
 import {name as appName} from './app.json'
-import './src/domain/i18n'
+import '@domain/i18n'
 
 AppRegistry.registerComponent(appName, () => App)
