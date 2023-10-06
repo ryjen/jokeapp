@@ -7,5 +7,5 @@ export class JokeRepository {
     this.api = jokeApi
   }
 
-  getRandomJoke = () => this.api.endpoints.getRandomJoke
+  getRandomJoke = () => this.api.useGetRandomJokeQuery()
 }

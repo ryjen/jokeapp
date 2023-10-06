@@ -9,7 +9,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {favouriteReducer as favourites} from '@infrastructure/favourite'
 import {jokeReducer as random, jokeApi} from '@infrastructure/joke'
 
@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage,
+  storage: AsyncStorage,
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

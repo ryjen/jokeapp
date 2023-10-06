@@ -9,9 +9,7 @@ const jokeRepository = DI.resolve('jokeRepository')
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
-  const {data, isError, isLoading, refetch} = jokeRepository
-    .getRandomJoke()
-    .useQuery()
+  const {data, isError, isLoading, refetch} = jokeRepository.getRandomJoke()
 
   useEffect(
     () =>
@@ -34,7 +32,7 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
           </VStack>
         ) : (
           <ScrollView p="10">
-            <Text fontSize="4xl">{data.joke?.joke}</Text>
+            <Text fontSize="4xl">{data?.joke}</Text>
           </ScrollView>
         )}
       </Center>
