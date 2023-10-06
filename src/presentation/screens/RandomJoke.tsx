@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
 import {AppLayout} from '@presentation/components'
-import {DI} from '@application/store'
+import {container as DI} from '@application/di'
 
 const jokeRepository = DI.resolve('jokeRepository')
 
@@ -16,7 +16,6 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   useEffect(
     () =>
       navigation.addListener('tabPress', e => {
-        console.log(e)
         refetch()
       }),
     [navigation, refetch],

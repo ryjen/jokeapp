@@ -1,7 +1,7 @@
 import type {Joke} from '@domain/types'
 import type {JokeResponse} from '@infrastructure/types'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import {jokeFromResponse} from '@infrastructure/joke'
+import {jokeFromResponse} from './Mapper'
 
 export const jokeApi = createApi({
   reducerPath: 'jokeApi',

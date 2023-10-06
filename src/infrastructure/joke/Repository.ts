@@ -1,4 +1,4 @@
-import {jokeApi as Api} from '@infrastructure/joke'
+import {jokeApi as Api} from './Api'
 
 export class JokeRepository {
   api: typeof Api

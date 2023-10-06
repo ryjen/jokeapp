@@ -5,7 +5,7 @@ import {
   PayloadAction,
   ActionReducerMapBuilder,
 } from '@reduxjs/toolkit'
-import {DI} from '@application/store'
+import {container as DI} from '@application/di'
 
 const repository = DI.resolve('jokeRepository')
 

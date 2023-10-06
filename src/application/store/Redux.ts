@@ -1,4 +1,4 @@
-import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -10,14 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import {favouriteReducer as favourites} from '@infrastructure/favourite'
-import {jokeReducer as random, jokeApi} from '@infrastructure/joke'
-
-const rootReducer = combineReducers({
-  favourites,
-  random,
-  [jokeApi.reducerPath]: jokeApi.reducer,
-})
+import {rootReducer, rootMiddleware} from './Reducer'
 
 const persistConfig = {
   key: 'root',
@@ -34,7 +27,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(jokeApi.middleware),
+    }).concat(rootMiddleware),
 })
 
 export const persistor = persistStore(store)
