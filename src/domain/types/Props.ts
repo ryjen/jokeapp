@@ -1,5 +1,5 @@
 import type {Joke} from './Joke'
 
-export type JokeProps = {
+export interface JokeProps {
   joke: Joke
 }

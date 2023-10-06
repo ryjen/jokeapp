@@ -1,17 +1,22 @@
-import {useAppDispatch, useAppSelector} from '@application/hooks'
-import {updateFavourite} from '@infrastructure/favourite'
 import type {RootState} from '@application/types'
 import type {Joke} from '@domain/types'
+import {useCallback} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {updateFavourite, selectIsFavouriteJoke} from '@infrastructure/favourite'
 
-export const useFavouriteJoke = (joke: Joke) => {
-  const dispatch = useAppDispatch()
+export const useFavouriteJoke = (
+  joke: Joke,
+): [boolean, React.Dispatch<React.SetStateAction<void>>] => {
+  const dispatch = useDispatch()
 
-  const isFavourite = useAppSelector((state: RootState) => {
-    const favs = state.favourites.favourites || []
-    return joke && favs.findIndex(j => j.id === joke.id) !== -1
-  })
+  const isFavourite = useSelector((state: RootState) =>
+    selectIsFavouriteJoke(state, joke),
+  )
 
-  const setFavourite = () => dispatch(updateFavourite(joke))
+  const toggleFavourite = useCallback(
+    () => dispatch(updateFavourite(joke)),
+    [joke, dispatch],
+  )
 
-  return [isFavourite, setFavourite]
+  return [isFavourite, toggleFavourite]
 }

@@ -20,29 +20,24 @@ a small app to request a joke from [iCanHazDadJoke](https://icanhazdadjoke.com)
 
 ### architecture
 
-- uncle bob's clean architecture, separation of data, domain and presentation
-  layers with use cases
+![DDD](https://resocoder.com/wp-content/uploads/2020/03/DDD-Flutter-Diagram-v3.svg)
+
+- uncle bob's clean architecture, and domain driven design
+- separation of concerns
+- Dependency injection
 - redux architecture
-- nested navigation
+- RTK query instead of fetch
 
 ## implementation
 
 ### project layout
 
-To reduce conflicts and complexity while increasing cohesion and loose coupling.
-
 #### clean architecture modules
 
-- **domain**: business entities, interfaces and use cases between layers
-- **data**: implementation of repositories, data storage and mapping to domain
-- **ui**: presentation of data and user interaction
-
-#### custom modules
-
-- **app**: the entry point to the application
-- **meta**: code unspecific to app related to programming languages, frameworks or algorithms
-- **test**: test data and instrumented tests
-- **vendor**: third party project files
+- **application**: storage and use cases, binding layers
+- **domain**: business entities, interfaces, business critical logic
+- **infrastructure**: implementation of repositories, data sources and mapping to domain
+- **presentation**: presentation of data and user interaction
 
 ### tests
 
@@ -56,14 +51,11 @@ To reduce conflicts and complexity while increasing cohesion and loose coupling.
 
 ### TODO
 
-- [x] speech bubbles
-- [ ] improve UX (scrolling, snackbar)
+- [ ] improve UX
 - [ ] ML to know sentiment of joke and predict favorites
 - [ ] speech bubble characters based on category or sentiment
-- [ ] multiplatform (pending kotlin multiplatform release)
-  - [x] switch from room to sqldelite
 - [ ] abstract to project template
-- [ ] generalize content use case, and add new remote sources, like quotes
+- [ ] add more remote sources for all the jokes
 - [ ] export to text-over-photo for sharing
 - [ ] analytics
 - [ ] allow user to add content

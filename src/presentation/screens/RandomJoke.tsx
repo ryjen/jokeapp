@@ -10,6 +10,8 @@ const jokeRepository = DI.resolve('jokeRepository')
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
   const {data, isError, isLoading, refetch} = jokeRepository.getRandomJoke()
+  const INITIAL_DELAY = 10000
+  const INTERVAL_DELAY = 10000
 
   useEffect(
     () =>
@@ -18,6 +20,16 @@ export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
       }),
     [navigation, refetch],
   )
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>
+    setTimeout(() => {
+      interval = setInterval(() => {
+        refetch()
+      }, INTERVAL_DELAY)
+    }, INITIAL_DELAY - INTERVAL_DELAY)
+    return () => clearInterval(interval)
+  }, [refetch])
 
   return (
     <AppLayout>

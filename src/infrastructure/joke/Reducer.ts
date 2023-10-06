@@ -1,5 +1,5 @@
 import type {Joke} from '@domain/types'
-import type {State} from './State'
+import type {JokeState as State} from '@infrastructure/types'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 const initialState: State = {}

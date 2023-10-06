@@ -1,4 +1,4 @@
-import type {State} from './State'
+import type {FavouriteState as State} from '@infrastructure/types'
 import type {Joke} from '@domain/types'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {persistReducer} from 'redux-persist'

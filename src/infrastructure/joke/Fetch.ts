@@ -1,5 +1,7 @@
-import type {Joke as JokeResponse} from '@domain/types'
+import type {Joke} from '@domain/types'
+import type {JokeResponse} from '@infrastructure/types'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import {jokeFromResponse} from '@infrastructure/joke'
 
 export const jokeApi = createApi({
   reducerPath: 'jokeApi',
@@ -10,8 +12,9 @@ export const jokeApi = createApi({
     },
   }),
   endpoints: builder => ({
-    getRandomJoke: builder.query<JokeResponse, void>({
+    getRandomJoke: builder.query<Joke, void>({
       query: () => '/',
+      transformResponse: (data: JokeResponse): Joke => jokeFromResponse(data),
     }),
   }),
 })

@@ -4,3 +4,4 @@ export {
   update as updateFavourite,
   reducer as favouriteReducer,
 } from './Reducer'
+export * from './Selector'

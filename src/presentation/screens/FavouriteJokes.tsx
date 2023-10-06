@@ -1,13 +1,11 @@
-import type {RootState} from '@application/types'
 import React from 'react'
 import {FlatList} from 'native-base'
+import {useSelector} from 'react-redux'
 import {AppLayout, FavouriteJoke} from '@presentation/components'
-import {useAppSelector} from '@application/hooks'
+import {selectFavouriteJokes} from '@infrastructure/favourite'
 
 export const FavouriteJokes = () => {
-  const favourites = useAppSelector(
-    (state: RootState) => state.favourites.favourites,
-  )
+  const favourites = useSelector(selectFavouriteJokes)
 
   return (
     <AppLayout>

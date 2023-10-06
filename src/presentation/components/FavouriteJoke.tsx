@@ -1,8 +1,8 @@
 import type {Joke} from '@domain/types'
 import React, {useCallback} from 'react'
+import {useDispatch} from 'react-redux'
 import {Box, Text, Flex, IconButton} from 'native-base'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
-import {useAppDispatch} from '@application/hooks'
 import {removeFavourite} from '@infrastructure/favourite'
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const FavouriteJoke = (props: Props) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
   const onRemoveFavourite = useCallback(
     () => dispatch(removeFavourite(props.item.id)),
     [dispatch, props.item.id],

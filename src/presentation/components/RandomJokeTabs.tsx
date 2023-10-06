@@ -1,6 +1,6 @@
-import type {RootState} from '@application/types'
 import type {RandomJokeNavParams} from '@presentation/types'
 import React from 'react'
+import {useSelector} from 'react-redux'
 import {
   RefreshIcon,
   FavouritesIcon,
@@ -8,7 +8,7 @@ import {
 } from '@presentation/components'
 import {FavouriteJokesScreen, RandomJokeScreen} from '@presentation/screens'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {useAppSelector} from '@application/hooks'
+import {selectNumberOfFavourites} from '@infrastructure/favourite'
 import {useAppTheme} from '@presentation/hooks'
 import {useTranslation} from 'react-i18next'
 
@@ -16,9 +16,7 @@ const Tab = createBottomTabNavigator<RandomJokeNavParams>()
 
 export const RandomJokeTabs = () => {
   const {t} = useTranslation()
-  const numOfFavs = useAppSelector(
-    (state: RootState) => state.favourites.favourites.length,
-  )
+  const numOfFavs = useSelector(selectNumberOfFavourites)
   const {appBar} = useAppTheme()
 
   return (
