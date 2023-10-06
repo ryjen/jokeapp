@@ -8,4 +8,6 @@ export class JokeRepository {
   }
 
   getRandomJoke = () => this.api.useGetRandomJokeQuery()
+
+  hasNewJoke = () => this.api.endpoints.getRandomJoke.matchFulfilled
 }

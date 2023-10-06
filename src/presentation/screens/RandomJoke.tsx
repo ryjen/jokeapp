@@ -10,12 +10,13 @@ const jokeRepository = DI.resolve('jokeRepository')
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
   const {data, isError, isLoading, refetch} = jokeRepository.getRandomJoke()
-  const INITIAL_DELAY = 10000
-  const INTERVAL_DELAY = 10000
+  const INITIAL_DELAY = 20000
+  const INTERVAL_DELAY = 20000
 
   useEffect(
     () =>
-      navigation.addListener('tabPress', () => {
+      navigation.addListener('tabPress', e => {
+        console.log(e)
         refetch()
       }),
     [navigation, refetch],

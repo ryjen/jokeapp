@@ -1,11 +1,5 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
-module.exports = {
+const config = {
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -15,3 +9,5 @@ module.exports = {
     }),
   },
 }
+
+module.exports = config
