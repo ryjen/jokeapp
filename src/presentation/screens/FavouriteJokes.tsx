@@ -2,7 +2,7 @@ import type {RootState} from '@application/types'
 import React from 'react'
 import {FlatList} from 'native-base'
 import {AppLayout, FavouriteJoke} from '@presentation/components'
-import {useAppSelector} from '@application/store'
+import {useAppSelector} from '@application/hooks'
 
 export const FavouriteJokes = () => {
   const favourites = useAppSelector(

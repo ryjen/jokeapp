@@ -1,11 +1,11 @@
 import type {RootState} from '@application/types'
-import type {JokeProps as Props} from '@presentation/types'
+import type {JokeProps as Props} from '@domain/types'
 import React, {useCallback} from 'react'
 import {IconButton} from 'native-base'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
 import {useAppTheme} from '@presentation/hooks'
 import {useAppDispatch, useAppSelector} from '@application/hooks'
-import {updateFavourite} from '@infrastructure/hooks'
+import {updateFavourite} from '@infrastructure/favourite'
 
 export const AddRemoveFavourite = ({joke}: Props) => {
   const {icons} = useAppTheme()

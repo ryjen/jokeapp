@@ -1,15 +1,40 @@
-import {configureStore} from '@reduxjs/toolkit'
-import thunk from 'redux-thunk'
-import {persistStore} from 'redux-persist'
-import {reducer as favourites} from '@infrastructure/favourite'
-import {reducer as joke} from '@infrastructure/joke'
+import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import {favouriteReducer as favourites} from '@infrastructure/favourite'
+import {jokeReducer as random, jokeApi} from '@infrastructure/joke'
+
+const rootReducer = combineReducers({
+  favourites,
+  random,
+  [jokeApi.reducerPath]: jokeApi.reducer,
+})
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-  reducer: {
-    favourites,
-    joke,
-  },
-  middleware: [thunk],
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(jokeApi.middleware),
 })
 
 export const persistor = persistStore(store)

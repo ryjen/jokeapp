@@ -1,6 +1,6 @@
 import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs'
 
-export interface TabParamList {
+export type TabParamList = {
   RandomTab: undefined
   FavsTab: undefined
 }

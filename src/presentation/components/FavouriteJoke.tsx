@@ -3,7 +3,7 @@ import React, {useCallback} from 'react'
 import {Box, Text, Flex, IconButton} from 'native-base'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
 import {useAppDispatch} from '@application/hooks'
-import {removeFavourite} from '@infrastructure/hooks'
+import {removeFavourite} from '@infrastructure/favourite'
 
 interface Props {
   item: Joke

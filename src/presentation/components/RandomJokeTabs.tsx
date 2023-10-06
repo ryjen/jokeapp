@@ -1,5 +1,5 @@
 import type {RootState} from '@application/types'
-import type {RandomJokeNavParams} from '@domain/types'
+import type {RandomJokeNavParams} from '@presentation/types'
 import React from 'react'
 import {
   RefreshIcon,

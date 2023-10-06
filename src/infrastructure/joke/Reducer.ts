@@ -1,5 +1,6 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import type {Joke} from '@domain/types'
+import type {State} from './State'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 const initialState: State = {}
 

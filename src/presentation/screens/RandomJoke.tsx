@@ -1,35 +1,34 @@
 import type {RandomJokeScreenProps} from '@presentation/types'
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useEffect} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
 import {AppLayout} from '@presentation/components'
-import {useRandomJoke} from '@application/usecases'
+import {DI} from '@application/store'
+
+const jokeRepository = DI.resolve('jokeRepository')
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
-  const [isRefreshing, setRefreshing] = useState(false)
-  const data = useRandomJoke(isRefreshing)
-
-  const toggleRefresh = useCallback(() => {
-    setRefreshing(value => !value)
-  }, [])
+  const {data, isError, isLoading, refetch} = jokeRepository
+    .getRandomJoke()
+    .useQuery()
 
   useEffect(
     () =>
       navigation.addListener('tabPress', () => {
-        toggleRefresh()
+        refetch()
       }),
-    [navigation, toggleRefresh],
+    [navigation, refetch],
   )
 
   return (
     <AppLayout>
       <Center flex={1}>
-        {data.isLoading ? (
+        {isLoading ? (
           <VStack>
             <Spinner />
           </VStack>
-        ) : data.isError ? (
+        ) : isError ? (
           <VStack>
             <Text fontSize="md">{t('Could not load random joke.')}</Text>
           </VStack>

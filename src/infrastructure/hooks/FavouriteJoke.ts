@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from '@application/hooks'
 import {updateFavourite} from '@infrastructure/favourite'
 import type {RootState} from '@application/types'
-import type {Joke} from '@infrastructure/types'
+import type {Joke} from '@domain/types'
 
 export const useFavouriteJoke = (joke: Joke) => {
   const dispatch = useAppDispatch()

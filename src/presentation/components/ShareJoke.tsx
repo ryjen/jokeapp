@@ -1,9 +1,9 @@
-import type {JokeProps as Props} from '@presentation/types'
+import type {JokeProps as Props} from '@domain/types'
 import React from 'react'
 import {Share, Alert} from 'react-native'
 import {IconButton} from 'native-base'
 import {default as FontAwesome} from 'react-native-vector-icons/FontAwesome'
-import {useAppTheme} from '@application/hooks'
+import {useAppTheme} from '@presentation/hooks'
 import {useTranslation} from 'react-i18next'
 
 export const ShareJoke = ({joke}: Props) => {

@@ -1,7 +1,8 @@
+import type {State} from './State'
+import type {Joke} from '@domain/types'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {persistReducer} from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import type {State} from './State'
 
 const initialState: State = {
   favourites: [],
