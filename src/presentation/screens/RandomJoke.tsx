@@ -3,19 +3,17 @@ import React, {useEffect} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
 import {AppLayout} from '@presentation/components'
-import {container as DI} from '@application/di'
-
-const jokeRepository = DI.resolve('jokeRepository')
+import {jokeRepository} from '@infrastructure/joke'
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
-  const {data, isError, isLoading, refetch} = jokeRepository.getRandomJoke()
+  const {data, isError, isLoading, refetch} = jokeRepository().getRandomJoke()
   const INITIAL_DELAY = 20000
   const INTERVAL_DELAY = 20000
 
   useEffect(
     () =>
-      navigation.addListener('tabPress', e => {
+      navigation.addListener('tabPress', () => {
         refetch()
       }),
     [navigation, refetch],
