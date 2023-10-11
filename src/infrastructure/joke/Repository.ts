@@ -1,5 +1,4 @@
 import {jokeApi as Api} from './Api'
-import {container as DI} from '@application/di'
 
 export class JokeRepository {
   api: typeof Api
@@ -12,6 +11,3 @@ export class JokeRepository {
 
   hasNewJoke = () => this.api.endpoints.getRandomJoke.matchFulfilled
 }
-
-export const repository = (): JokeRepository =>
-  DI.resolve<JokeRepository>('jokeRepository')

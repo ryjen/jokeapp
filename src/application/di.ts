@@ -1,9 +1,3 @@
-import {createContainer, asClass, asValue} from 'awilix'
-import {JokeRepository, jokeApi} from '@infrastructure/joke'
+import {setupContainer} from './store/DI'
 
-export const container = createContainer()
-
-container.register({
-  jokeRepository: asClass(JokeRepository).scoped(),
-  jokeApi: asValue(jokeApi),
-})
+export const container = setupContainer()

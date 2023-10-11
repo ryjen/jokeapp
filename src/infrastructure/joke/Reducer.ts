@@ -5,7 +5,7 @@ import {
   PayloadAction,
   ActionReducerMapBuilder,
 } from '@reduxjs/toolkit'
-import {jokeRepository} from '@infrastructure/joke'
+import {container} from '@application/di'
 
 const initialState: State = {}
 
@@ -19,7 +19,7 @@ const slice = createSlice({
   },
   extraReducers: (builder: ActionReducerMapBuilder<State>) =>
     builder.addMatcher(
-      jokeRepository().hasNewJoke(),
+      container.cradle.jokeRepository.hasNewJoke(),
       (state: State, action: PayloadAction<Joke>) => {
         state.joke = action.payload
       },

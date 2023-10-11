@@ -1,5 +1,5 @@
 export {reducer as jokeReducer, update as updateJoke} from './Reducer'
 export * from './Api'
-export {JokeRepository, repository as jokeRepository} from './Repository'
+export {JokeRepository} from './Repository'
 export * from './Mapper'
 export * from './Selector'

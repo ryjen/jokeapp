@@ -2,12 +2,13 @@ import type {RandomJokeScreenProps} from '@presentation/types'
 import React, {useEffect} from 'react'
 import {Center, Text, VStack, Spinner, ScrollView} from 'native-base'
 import {useTranslation} from 'react-i18next'
+import {useCradle} from '@jishida/react-awilix'
 import {AppLayout} from '@presentation/components'
-import {jokeRepository} from '@infrastructure/joke'
 
 export const RandomJoke = ({navigation}: RandomJokeScreenProps) => {
   const {t} = useTranslation()
-  const {data, isError, isLoading, refetch} = jokeRepository().getRandomJoke()
+  const {jokeRepository} = useCradle()
+  const {data, isError, isLoading, refetch} = jokeRepository.getRandomJoke()
   const INITIAL_DELAY = 20000
   const INTERVAL_DELAY = 20000
 
