@@ -1,0 +1,637 @@
+repo_name: ryjen/jokeapp-rn
+report_id: 00f3bd2f8d33414847b33a41cba70656
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-23T22:19:24+00:00'
+requested_by: ryjen
+provider: github
+branch: main
+detected_tools_count: 47
+tools:
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn
+  detection_source: Repo Metadata
+- name: Objective-C
+  description: The primary programming language you use when writing software for
+    OS X and iOS
+  website_url: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1008/xcode.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn
+  detection_source: Repo Metadata
+- name: Ruby
+  description: A dynamic, interpreted, open source programming language with a focus
+    on simplicity and productivity
+  website_url: https://www.ruby-lang.org
+  version: 2.7.5
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/.ruby-version
+  detection_source: Repo Metadata
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2022-10-10 18:40:28.000000000 Z
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn
+  detection_source: Repo Metadata
+- name: Android SDK
+  description: An SDK that provides you the API libraries and developer tools necessary
+    to build, test, and debug apps for Android.
+  website_url: http://developer.android.com
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1010/m8jf0po4imu8t5eemjdd.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/android/app/build.gradle
+  detection_source: android/app/build.gradle
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-03-22 01:30:27.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 0.64.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/ios/Podfile.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: React Native
+  description: A framework for building native apps with React
+  website_url: http://facebook.github.io/
+  version: 0.72.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Cross-Platform Mobile Development
+  image_url: https://img.stackshare.io/service/2699/KoK6gHzp.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: Redux
+  description: Predictable state container for JavaScript apps
+  website_url: https://redux.js.org/
+  version: 4.2.1
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: State Management Library
+  image_url: https://img.stackshare.io/service/4074/13142323.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 06:02:09.000000000 Z
+- name: redux-thunk
+  description: Thunk middleware for Redux
+  website_url: https://github.com/gaearon/redux-thunk
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: State Management Library
+  image_url: https://img.stackshare.io/service/5448/13142323.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 06:02:09.000000000 Z
+- name: styled-components
+  description: Visual primitives for the component age. Use the best bits of ES6 and
+    CSS to style your apps without stress.
+  website_url: https://styled-components.com
+  version: 6.0.8
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: JavaScript Framework Components
+  image_url: https://img.stackshare.io/service/6749/styled-components.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: Redux Persist
+  description: A library to persist and rehydrate a redux store
+  website_url: https://github.com/rt2zz/redux-persist
+  version: 6.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/service/6740/no-img-open-source.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 06:02:09.000000000 Z
+- name: Babel
+  description: Use next generation JavaScript, today.
+  website_url: http://babeljs.io/
+  version: 7.23.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JavaScript Compilers
+  image_url: https://img.stackshare.io/service/2739/-1wfGjNw.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: babel.config.js
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2021-10-14 06:11:50.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2021-10-14 06:11:50.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn
+  detection_source: Repo Metadata
+- name: Gradle
+  description: A powerful build system for the JVM
+  website_url: https://www.gradle.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Java Build Tools
+  image_url: https://img.stackshare.io/service/975/gradlephant-social-black-bg.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/android/app/build.gradle
+  detection_source: android/app/build.gradle
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-03-22 01:30:27.000000000 Z
+- name: Jest
+  description: Painless JavaScript Unit Testing
+  website_url: http://facebook.github.io/jest/
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/830/jest.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2021-10-14 06:11:50.000000000 Z
+- name: Prettier
+  description: 'Prettier is an opinionated code formatter. '
+  website_url: https://prettier.io/
+  version: 3.0.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: RubyGems
+  description: Easily download, install, and use ruby software packages on your system
+  website_url: https://rubygems.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/Gemfile
+  detection_source: Gemfile
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2022-10-10 18:40:28.000000000 Z
+- name: Yarn
+  description: A new package manager for JavaScript
+  website_url: https://yarnpkg.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: yarn.lock
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2021-10-14 06:11:50.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2021-10-14 06:11:50.000000000 Z
+- name: Android OS
+  description: An open source mobile operating system by Google
+  website_url: https://www.android.com
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Operating Systems
+  image_url: https://img.stackshare.io/service/9586/ZvmtaSXW_400x400.jpg
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/android/app/build.gradle
+  detection_source: android/app/build.gradle
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-03-22 01:30:27.000000000 Z
+- name: CocoaPods
+  description: A dependency manager for Swift and Objective-C Cocoa projects
+  website_url: https://cocoapods.org/
+  version: '1.11'
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: CocoaPods Packages
+  image_url: https://img.stackshare.io/service/2426/e1cbdef9d4b11484049a033886578e54_400x400.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/Gemfile
+  detection_source: Gemfile
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-03-22 01:30:27.000000000 Z
+- name: i18next
+  description: Internationalization-framework written in and for JavaScript
+  website_url: https://www.i18next.com/
+  open_source: false
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Translation Service
+  image_url: https://img.stackshare.io/service/4747/default_82286a88bf01c80539ebd1d6dbea1b25df8af16d.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: "@babel/core"
+  description: Babel compiler core
+  package_url: https://www.npmjs.com/@babel/core
+  version: 7.23.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15810/default_004658cda9b38934f2871435e9dc15608c86e8be.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 07:10:22.000000000 Z
+- name: "@babel/preset-env"
+  description: A Babel preset for each environment
+  package_url: https://www.npmjs.com/@babel/preset-env
+  version: 7.22.20
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15819/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 07:10:22.000000000 Z
+- name: "@babel/runtime"
+  description: Babel's modular runtime helpers
+  package_url: https://www.npmjs.com/@babel/runtime
+  version: 7.23.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15934/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 07:10:22.000000000 Z
+- name: "@react-native-community/eslint-config"
+  description: ESLint config for React Native
+  package_url: https://www.npmjs.com/@react-native-community/eslint-config
+  version: 3.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18225/default_88b0d2e50daafd07d82e1afc6ee8f1b97181a07d.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: "@types/jest"
+  description: TypeScript definitions for Jest
+  package_url: https://www.npmjs.com/@types/jest
+  version: 29.5.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15840/default_004658cda9b38934f2871435e9dc15608c86e8be.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 06:02:09.000000000 Z
+- name: "@types/react"
+  description: TypeScript definitions for React
+  package_url: https://www.npmjs.com/@types/react
+  version: 18.2.25
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: "@types/react-native"
+  description: TypeScript definitions for react-native
+  package_url: https://www.npmjs.com/@types/react-native
+  version: 0.70.15
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16569/default_682ffbfa52bb1873b212151cffed5d464d6efdfb.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: "@types/react-redux"
+  description: TypeScript definitions for react-redux
+  package_url: https://www.npmjs.com/@types/react-redux
+  version: 7.1.27
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16687/default_6dad4e42e12d47cc6edfbdea036dae12f91abebb.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: "@types/react-test-renderer"
+  description: TypeScript definitions for react-test-renderer
+  package_url: https://www.npmjs.com/@types/react-test-renderer
+  version: 18.0.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16593/default_ebd83b4f0415be108d977ea72558b13fd7c5283d.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: babel-plugin-module-resolver
+  description: Module resolver plugin for Babel
+  package_url: https://www.npmjs.com/babel-plugin-module-resolver
+  version: 5.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16171/default_2c2f2c7b016f84c0fad2576cb986cb14a5dbbc2f.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 07:10:22.000000000 Z
+- name: eslint-import-resolver-babel-module
+  description: Babel-plugin-module-resolver resolver for eslint-plugin-import
+  package_url: https://www.npmjs.com/eslint-import-resolver-babel-module
+  version: 5.3.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16922/default_ebf16e0c8af5e95030933d9e01479224b6665289.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-06 07:10:22.000000000 Z
+- name: eslint-plugin-import
+  description: Import with sanity
+  package_url: https://www.npmjs.com/eslint-plugin-import
+  version: 2.28.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15806/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: eslint-plugin-prettier
+  description: Runs prettier as an eslint rule
+  package_url: https://www.npmjs.com/eslint-plugin-prettier
+  version: 5.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15896/default_6e6e1d6bb189c8bb26c6410618bd597979578f39.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: eslint-plugin-react-hooks
+  description: ESLint rules for React Hooks
+  package_url: https://www.npmjs.com/eslint-plugin-react-hooks
+  version: 4.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16149/default_1f3a2fc7d882e29a43394ecdf491b8989ea3f0fa.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: metro-react-native-babel-preset
+  description: Babel preset for React Native applications
+  package_url: https://www.npmjs.com/metro-react-native-babel-preset
+  version: 0.76.8
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16699/default_5ea3918e441555ef1fd413f4100fe15fe23b366f.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-i18next
+  description: Internationalization for react done right
+  package_url: https://www.npmjs.com/react-i18next
+  version: 13.2.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17777/default_65e03f67ad735337587d736d5fbc87b538eccdf7.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-native
+  description: A framework for building native apps using React
+  package_url: https://www.npmjs.com/react-native
+  version: 0.72.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16064/default_5a461d436012a0c4024534aaba303dcdb0297d24.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-native-svg
+  description: SVG library for react-native
+  package_url: https://www.npmjs.com/react-native-svg
+  version: 13.14.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18169/default_4ad5899bf99118763f1e1098ab583aaff0340ee8.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-native-vector-icons
+  description: Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid
+  package_url: https://www.npmjs.com/react-native-vector-icons
+  version: 10.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17141/default_0ffbf6d9ee2940fe94be8424fd9afff068fff458.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-redux
+  description: Official React bindings for Redux
+  package_url: https://www.npmjs.com/react-redux
+  version: 8.1.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15984/default_f49d4c116f8ea0155f4d92673b084378bba02760.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: react-test-renderer
+  description: React package for snapshot testing
+  package_url: https://www.npmjs.com/react-test-renderer
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15929/default_ac622bc364a601d766b9a6f6039f191492f54d65.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-11 21:57:06.000000000 Z
+- name: styled-system
+  description: Responsive
+  package_url: https://www.npmjs.com/styled-system
+  version: 5.1.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17321/default_6afdd1bc7e3815a18b56c31d0b4acf372c00f6e2.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/yarn.lock
+  detection_source: package.json
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-10-05 23:14:28.000000000 Z
+- name: cocoapods
+  description: CocoaPods manages library dependencies for your Xcode project
+  package_url: https://rubygems.org/cocoapods
+  version: '1.11'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/19189/default_2266a6c0e2693d55b1999a7c5db4be13e5720232.png
+  detection_source_url: https://github.com/ryjen/jokeapp-rn/blob/main/Gemfile
+  detection_source: Gemfile
+  last_updated_by: Ryan Jennings
+  last_updated_on: 2023-03-22 01:30:27.000000000 Z
