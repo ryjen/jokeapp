@@ -2,7 +2,7 @@ repo_name: ryjen/jokeapp-rn
 report_id: 00f3bd2f8d33414847b33a41cba70656
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-23T22:19:24+00:00'
+timestamp: '2024-02-29T19:36:52+00:00'
 requested_by: ryjen
 provider: github
 branch: main
@@ -227,7 +227,7 @@ tools:
   last_updated_by: Ryan Jennings
   last_updated_on: 2021-10-14 06:11:50.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 3.0.3
   license: MIT
